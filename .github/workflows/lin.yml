@@ -18,13 +18,14 @@ jobs:
         uses: actions/checkout@v4
       - name: Build
         run: |
+          . /etc/profile
           pushd .
           cd /root/spack
           . ./share/spack/setup-env.sh
           which spack
           spack compiler find
           spack find
-          spack load iowarp@main
+          spack load iowarp.iowarp@main
           popd
           mkdir build
           cd build
