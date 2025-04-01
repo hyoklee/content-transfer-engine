@@ -1,4 +1,4 @@
-name: ubuntu latest
+name: ubuntu-24.04
 
 on:
   push:
@@ -11,7 +11,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     container: "iowarp/iowarp-user:latest"
     steps:
       - name: Get Sources
@@ -24,11 +24,11 @@ jobs:
           . ./share/spack/setup-env.sh
           which spack
           spack repo add /iowarp-install/iowarp-spack
-          spack repo list
-          spack find
           spack load iowarp@main
           popd
-          mkdir build
+          jarvis bootstrap from local
+          jarvis env build hermes
+          jarvis ppl index copy jarvis_hermes.hermes.test_hermes
           cd build
           cmake ..
           ctest -D Experimental -C Release
