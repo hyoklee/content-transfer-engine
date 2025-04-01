@@ -20,6 +20,7 @@ jobs:
         run: |
           . /root/spack/share/spack/setup-env.sh
           spack load iowarp
+          spack find
           mkdir build
           cd build
           cmake ..
