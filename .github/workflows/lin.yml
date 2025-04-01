@@ -23,7 +23,6 @@ jobs:
           . ./share/spack/setup-env.sh
           which spack
           spack compiler find
-          spack load iowarp
           spack find
           popd
           mkdir build
