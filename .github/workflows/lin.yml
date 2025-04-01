@@ -1,0 +1,29 @@
+name: ubuntu latest
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+env:
+  BUILD_TYPE: Debug
+  LOCAL: local
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Sources
+        uses: actions/checkout@v4
+
+      - name: Install APT Dependencies
+        run: |
+          sudo apt update
+
+      - name: Build And Install Dependencies
+        run: ci/install_deps.sh
+
+      - name: Build
+        run: |
+      - name: Build and Test
+        run: docker exec /hermes_deps_c bash /hermes/ci/install_hermes.sh
