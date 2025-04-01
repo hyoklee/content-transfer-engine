@@ -20,7 +20,7 @@ jobs:
         run: |
           pushd .
           cd /root/spack
-          . /share/spack/setup-env.sh
+          . ./share/spack/setup-env.sh
           which spack
           spack compiler find
           spack load iowarp
