@@ -25,13 +25,14 @@ jobs:
           which spack
           spack repo add /iowarp-install/iowarp-spack
           spack load iowarp@main
-          CTE=`spack find --paths iowarp-cte | awk 'NR == 2' | cut -d ' ' -f 3`
           popd
           jarvis init p q
           jarvis bootstrap from local
           jarvis rg build
           mkdir -p /github/home/.jarvis/config/env/
-          jarvis repo add ${CTE}/jarvis/jarvis_hermes
+          CTE=`spack find --paths iowarp-cte | awk 'NR == 2' | cut -d ' ' -f 3`
+          echo $CTE
+          jarvis repo add $CTE/jarvis/jarvis_hermes
           jarvis ppl index copy jarvis_hermes.hermes.test_hermes
           jarvis env build hermes
           jarvis env show hermes
