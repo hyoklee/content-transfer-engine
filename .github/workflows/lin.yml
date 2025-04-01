@@ -30,6 +30,7 @@ jobs:
           jarvis init p q
           jarvis bootstrap from local
           jarvis rg build
+          mkdir -p /github/home/.jarvis/config/env/
           jarvis repo add ${CTE}/jarvis/jarvis_hermes
           jarvis ppl index copy jarvis_hermes.hermes.test_hermes
           jarvis ppl load yaml test_hermes.yaml
