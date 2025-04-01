@@ -24,7 +24,7 @@ jobs:
           . ./share/spack/setup-env.sh
           which spack
           spack compiler find
-          spack list --namespace iowarp
+          spack repo list
           spack find
           spack load iowarp@main
           popd
