@@ -36,7 +36,8 @@ jobs:
           jarvis ppl index copy jarvis_hermes.hermes.test_hermes
           jarvis env build hermes
           jarvis env show hermes
-          jarvis ppl load yaml /test_hermes.yaml
+          ls
+          jarvis ppl load yaml test_hermes.yaml
           jarvis ppl list
           jarvis ppl run
           mkdir build
