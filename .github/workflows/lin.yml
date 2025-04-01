@@ -23,7 +23,7 @@ jobs:
           cd /root/spack
           . ./share/spack/setup-env.sh
           which spack
-          spack compiler find
+          spack repo add /iowarp-install/iowarp-spack
           spack repo list
           spack find
           spack load iowarp@main
