@@ -33,10 +33,13 @@ jobs:
           CTE=`spack find --paths iowarp-cte | awk 'NR == 2' | cut -d ' ' -f 3`
           echo $CTE
           jarvis repo add $CTE/jarvis/jarvis_hermes
+          CRT=`spack find --paths iowarp-runtime | awk 'NR == 2' | cut -d ' ' -f 3`
+          echo $CRT
+          jarvis repo add $CRT/jarvis/jarvis_chimaera
           jarvis ppl index copy jarvis_hermes.hermes.test_hermes
+          ls
           jarvis env build hermes
           jarvis env show hermes
-          ls
           jarvis ppl load yaml test_hermes.yaml
           jarvis ppl list
           jarvis ppl run
