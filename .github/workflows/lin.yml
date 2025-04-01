@@ -26,9 +26,10 @@ jobs:
           spack repo add /iowarp-install/iowarp-spack
           spack load iowarp@main
           popd
+          jarvis init p q
           jarvis bootstrap from local
           jarvis env build hermes
-          jarvis ppl index copy jarvis_hermes.hermes.test_hermes
+          jarvis env show hermes
           cd build
           cmake ..
           ctest -D Experimental -C Release
