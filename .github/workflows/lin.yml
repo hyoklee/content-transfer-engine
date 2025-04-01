@@ -24,6 +24,7 @@ jobs:
           which spack
           spack compiler find
           spack find
+          spack load iowarp@main
           popd
           mkdir build
           cd build
