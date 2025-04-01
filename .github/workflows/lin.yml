@@ -27,10 +27,10 @@ jobs:
           spack load iowarp@main
           CTE=`spack find --paths iowarp-cte | awk 'NR == 2' | cut -d ' ' -f 3`
           popd
-          jarvis repo add ${CTE}/jarvis/jarvis_hermes
           jarvis init p q
           jarvis bootstrap from local
           jarvis rg build
+          jarvis repo add ${CTE}/jarvis/jarvis_hermes
           jarvis ppl index copy jarvis_hermes.hermes.test_hermes
           jarvis ppl load yaml test_hermes.yaml
           jarvis ppl run
