@@ -44,6 +44,6 @@ jobs:
           jarvis ppl list
           mkdir build
           cd build
-          cmake ..
+          cmake -DSITE="ubu-24" -DBUILDNAME="r/gcc-13" ..
           ctest -D Experimental -C Release
         shell: bash
