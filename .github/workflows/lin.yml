@@ -42,7 +42,6 @@ jobs:
           jarvis env show hermes
           jarvis ppl load yaml test_hermes.yaml
           jarvis ppl list
-          jarvis ppl run
           mkdir build
           cd build
           cmake ..
