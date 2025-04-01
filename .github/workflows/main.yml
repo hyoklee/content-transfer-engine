@@ -7,7 +7,7 @@ name: GitHub Actions
 on:
   push:
   pull_request:
-    branches: [ master ]
+    branches: [ main- ]
   workflow_dispatch:
     inputs:
       debug_enabled:
