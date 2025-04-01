@@ -25,6 +25,7 @@ jobs:
           which spack
           spack repo add /iowarp-install/iowarp-spack
           spack load iowarp@main
+          spack find --paths iowarp-cte
           popd
           jarvis init p q
           jarvis bootstrap from local
