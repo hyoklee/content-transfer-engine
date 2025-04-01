@@ -30,6 +30,7 @@ jobs:
           jarvis bootstrap from local
           jarvis env build hermes
           jarvis env show hermes
+          mkdir build
           cd build
           cmake ..
           ctest -D Experimental -C Release
