@@ -33,11 +33,11 @@ jobs:
           mkdir -p /github/home/.jarvis/config/env/
           jarvis repo add ${CTE}/jarvis/jarvis_hermes
           jarvis ppl index copy jarvis_hermes.hermes.test_hermes
-          jarvis ppl load yaml test_hermes.yaml
-          jarvis ppl run
           jarvis env build hermes
           jarvis env show hermes
+          jarvis ppl load yaml /test_hermes.yaml
           jarvis ppl list
+          jarvis ppl run
           mkdir build
           cd build
           cmake ..
